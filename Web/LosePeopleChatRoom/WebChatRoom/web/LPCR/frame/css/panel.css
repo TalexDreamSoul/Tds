@@ -1,0 +1,330 @@
+body{
+   /* background: linear-gradient(135deg, #3899ae, #C86DD7); */
+   background-attachment: fixed;
+}
+
+.chat{
+	
+	border-bottom-width: 0px;
+	margin: 0px;
+	padding: 0px;
+	top: 0px;
+	left: 0px;
+    /* font-size: 15px; */
+    width: 100%;
+    height: 100%;
+    background: white;
+	/* padding: 5px 5px 1px 1px; */
+    box-shadow: grey 3px 3px 9px;
+	position: absolute;
+	overflow: hidden;
+	
+}
+
+.groupname{
+	
+	top: 10px;
+	left: 10px;
+	width: 100%;
+	height: 60px;
+	font-size: 30px;
+	/* text-align: center; */
+	line-height: 60px;
+	box-shadow: grey 3px 3px 9px;
+	
+}
+
+.inputchat{
+	
+	border-bottom-width: 0px;
+	margin: 0px auto;
+	padding: 0px;
+	bottom: right;
+    font-size: 15px;
+    width: 1150px;
+    height: 40%;
+    background: white;
+	padding: 5px 5px 1px 1px;
+    /* box-shadow: grey 3px 3px 9px; */
+	border: grey solid 0px;
+	border-bottom-width:1px;
+	position: relative;
+	
+}
+
+.text{
+
+	left: 0px;
+	top: 0px;
+	height: 99%;
+	width: 1150px;
+	/* box-shadow: grey 3px 3px 9px; */
+	font-size: 18px;
+	
+}
+
+.mainchat{
+	
+	border-bottom-width: 0px;
+	margin: 10px auto;
+	padding: 0px;
+	top: 0px;
+    font-size: 15px;
+    width: 1150px;
+    height: 50%;
+    background: white;
+	padding: 5px 5px 1px 1px;
+    /* box-shadow: grey 3px 3px 9px; */
+	border: grey solid 0px;
+	border-bottom-width:1px;
+	position: relative;
+	/* overflow: auto; */
+	/* height:100px; */
+	overflow-y: scroll;
+}
+
+.imgBubble{
+	
+	border: black solid 1px;
+	
+}
+
+.bubbles{
+	
+	display: block;
+	position: absolute;
+	left: 0px;
+	margin: 120px auto;
+	
+}
+
+.sendput{
+	
+	left:1013px;
+	top:340px;
+	width:120px;
+	height:35px;
+	position: absolute;
+	box-shadow: grey 3px 3px 9px;
+	background: #6699FF;
+	font-size: 20px;
+	text-align: left;
+	line-height: -40px;
+	border: white solid 1px;
+	color:white;
+	
+}
+.sendput:hover{
+	
+	/* box-shadow: grey 3px 3px 9px; */
+	background: #3399FF;
+	font-size: 20px;
+	text-align: left;
+	line-height: 40px;
+	border: grey solid 1px;
+	color:white;
+	
+}
+
+.topTitle{
+	
+	border-bottom-width: 0px;
+	margin: 0px;
+	padding: 0px;
+	top: 0px;
+	left: 0px;
+    /* font-size: 15px; */
+    width: 100%;
+    height: 80px;
+    background: white;
+	/* padding: 5px 5px 1px 1px; */
+    box-shadow: grey 3px 3px 9px;
+	position: absolute;
+	overflow: hidden;
+	
+}
+
+.grouplists{
+	
+	border-bottom-width: 0px;
+	margin: 0px;
+	padding: 0px;
+	top: 0px;
+	left: 0px;
+    /* font-size: 15px; */
+    width: 100%;
+    height: 985px;
+    background: white;
+	/* padding: 5px 5px 1px 1px; */
+    box-shadow: grey 3px 3px 9px;
+	position: absolute;
+	
+}
+
+.group{
+	
+	display:inline-block;
+	margin: auto;
+	top: 50px;
+	padding: 0px;
+	left: 0px;
+	background-color: white;
+    /* font-size: 15px; */
+    width: 100%;
+    height: 100px;
+	border-radius: 5px;
+    /* background: white; */
+	/* border: 2px solid #3399FF; */
+	/* border-color: blue; */
+	/* border-bottom-width: 2px; */
+	/* padding: 5px 5px 1px 1px; */
+    /* box-shadow: grey 3px 3px 9px; */
+	position: absolute;
+	visibility: hidden;
+	
+}
+
+.group:hover{
+	
+	/* margin: 50px auto; */
+	padding: 0px;
+	left: 0px;
+	background-color: rgb(245, 245, 245);
+    /* font-size: 15px; */
+    width: 100%;
+    height: 100px;
+	border-radius: 5px;
+    /* background: white; */
+	/* border: 2px solid #3399FF; */
+	/* border-color: blue; */
+	/* border-bottom-width: 2px; */
+	/* padding: 5px 5px 1px 1px; */
+    /* box-shadow: grey 3px 3px 9px; */
+	position: absolute;
+	
+}
+
+.name {
+    /*background: linear-gradient(135deg, #3899ae, #C86DD7);*/
+    /*background-attachment: fixed;*/
+    margin: right;
+    /* font-family: "Helvetica Neue", Helvetica, Microsoft Yahei; */
+	left: 79%; 
+	top: 40%;
+    width: 650px;
+    height: 20px;
+	font-size: 25px;
+	position: absolute;
+    /* color: #2f25ab; */
+    /* background: #5cbfe7; */
+    /* background-attachment: fixed; */
+    /*padding: 3px 3px 3px 3px;*/
+    /* box-shadow: #5cbfe7 1px 1px 5px; */
+    /*border:3px solid #ddd;*/
+    /*border-image: -webkit-linear-gradient(#d7d7d7, #C86DD7) 20 20;*/
+    /*border-image: -moz-linear-gradient(#3899ae, #C86DD7) 20 20;*/
+    /*border-image: -o-linear-gradient(#3899ae, #C86DD7) 20 20;*/
+    /*border-image: linear-gradient(#3899ae, #C86DD7) 20 20;*/
+    /*overflow-y:scroll;*/
+}
+
+.level {
+    margin: right;
+	left: 60%; 
+	top: 40%;
+    width: 650px;
+    height: 20px;
+	font-size: 23px;
+	position: absolute;
+}
+
+.exit {
+    margin: right;
+	left: 93%; 
+	top: 40%;
+    width: 650px;
+    height: 20px;
+	font-size: 20px;
+	position: absolute;
+}
+
+.exit:hover {
+    margin: right;
+	left: 93%; 
+	top: 40%;
+    width: 650px;
+    height: 20px;
+	font-size: 20px;
+	color:grey;
+	position: absolute;
+}
+
+.expbg{
+	
+	left: 63%;
+	top: 40px;
+	width: 200px;
+	height: 15px;
+	background: #969696;
+	position: absolute;
+	border-radius: 50px;
+	
+}
+
+.expmain{
+	
+	left: 63%;
+	top: 40px;
+	width: 0px;
+	height: 15px;
+	background: #DDDDDD;
+	position: absolute;
+	border-radius: 50px;
+	
+}
+
+
+.exptext{
+	
+	left: 63%;
+	top: 20px;
+	width: 200px;
+	height: 15px;
+	color: blue;
+	position: absolute;
+	border-radius: 50px;
+	
+}
+
+/* <!--修改 滚动条 下面 的 宽度--> */
+
+.mainchat::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+/* <!--修改 滚动条的 下面 的 样式--> */
+.mainchat::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #CDCDCD;
+}
+/* <!--修改 滑块 --> */
+.mainchat::-webkit-scrollbar-thumb {
+  background-color: #191919;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

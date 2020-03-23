@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<?php session_start(); ?>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>LPCR</title>
+	
+	<link href="css/bubbles.css" rel="stylesheet" type="text/css" />
+    <link href="css/panel.css" rel="stylesheet" type="text/css" />
+	
+    <style type="text/css">
+      body,html{
+      	padding: 0;
+      }
+      #main{
+    		border:2px solid #ccc;
+    		box-shadow: 0px 5px 20px #ccc;
+    		position: absolute;
+    		top: 50%;left: 50%;
+    		transform: translate(-50%,-50%);
+      }
+    </style>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+  </head>
+  <script type="text/javascript">
+  
+  function check(){
+	
+	<!-- alert("正在检查..."); -->
+	
+	setTimeout( function(){
+		$.ajax({
+			type: "POST",
+			url: "check.php",
+			data: {"type" : "check"}, //参数
+			success: function(msg){
+			
+				<!-- alert("json: " + msg); -->
+				
+				if(msg == "unlogin"){
+				
+					alert("请先登录后重试!");
+					window.location.href="/LPCR/login.html";
+					
+					
+				}else{
+				
+					window.location.href="/LPCR/grop.html";
+					return;
+					<!-- var ev = eval('(' + msg + ')'); -->
+					<!-- for(var i in msg){ -->
+						<!-- alert(msg[i] + ">" + i); -->
+					<!-- } -->
+					
+					
+					var imgTx = document.getElementById("avatar");	
+
+					imgTx.src="http://q1.qlogo.cn/g?b=qq&nk=" + msg["userid"] + "&s=640";
+					imgTx.style.borderRadius = "50px";
+					imgTx.style.left = "75%";
+					imgTx.style.top = "10%";
+					imgTx.style.position = "absolute";
+					imgTx.style.width = "64px";
+					imgTx.style.height = "64px";
+					
+					
+					var name = document.getElementById("name");	
+					
+					name.innerHTML = msg["username"];
+					
+					var json = JSON.parse(msg.exp);
+					
+					<!-- 进度条进度 -->
+					
+					$.ajax({
+						type: "POST",
+						url: "schedule.php",
+						data: {"now" : json["now"] , "max" : json["max"]}, //参数
+						success: function(msg){
+						
+							var expmain  = document.getElementById("expmain");	
+							expmain.style.width = msg + "px";
+							
+							}
+						});
+					
+					
+					<!-- name.style.top = "30px"; -->
+					<!-- name.style.left = "75%"; -->
+					<!-- name.style.position = "absolute"; -->
+					
+					<!-- document.write(msg["exp"]); -->
+					
+					var text = document.getElementById("exptext");	
+					text.innerHTML = "进度: " + json["now"] + "/" + json["max"]  + "&nbsp;下一等级: " + json["next"] + "点";
+					<!-- alert(json["now"]); -->
+					<!-- alert(msg["exp"].["now"]); -->
+					
+					<!-- var exp = '(' + msg["exp"] + ')'; -->
+					<!-- alert(exp); -->
+					<!-- for(var i in json){ -->
+						<!-- alert(json[i]); -->
+					<!-- } -->
+					
+					var level = document.getElementById("level");	
+					level.innerHTML = msg["level"];
+				
+				}
+				
+				}
+			});
+			
+	}, 100 );//延迟2000毫秒
+  
+  }
+  </script>
+  <body onload="check()">
+  
+	<!-- 聊天布局 -->
+	<div class="chat" id="chat">
+	
+		<h1>&nbsp;&nbsp;&nbsp;Bukkit插件开发交流群</h1>
+		<div class="mainchat" id="mainchat">
+		
+			<!-- 气泡 -->
+			<img class="imgBubble" id="imgBubble" src="http://q1.qlogo.cn/g?b=qq&nk=1727534436&s=640" height="100%" width="100%" style="top:34px;left:-6px;position:absolute;width:80px;height:80px"/>
+			<div class="leftBubble" id="qp1">
+			<!-- 内容 -->
+			<span style="color:white"><span style="color:blue">@TalexDreamSoul</span> 丢人梦魂<br />这是LPCR,欢迎你！~<br />后续开放更多功能,喵喵喵！</span>
+			<div style="left:0px;top:-20px;font-size:15px;color:grey;position:absolute"><span style="color:red;font-weight:bold">[管理猿]</span>可乐酱</div>
+			</div>
+		
+		</div>
+		<div class="inputchat" id="inputchat">
+			<div class="sendput" id="sendput">
+				&nbsp;&nbsp;&nbsp;发送
+				<img class="send" id="send" src="img/send.png" height="100%" width="100%" style="left:85px;position:absolute;width:35px;width:35px"/>
+				
+		
+			</div>
+		
+		</div>
+		
+	</div>
+
+  
+	<!-- mainFrame -->
+	<div class="grouplists" id="grouplists">
+		<h2>&nbsp;可用的聊天小组(1个)</h2>
+		<div class="group1" id="group1" >
+		<img class="groupavatar" id="groupavatar" src="img/group.jpg" height="100%" width="100%" style="left:10px;top:14px;width:72px;height:72px;position: absolute;border-radius:50px;"/>
+		<h2 style="left:105px;position: absolute;">Bukkit插件开发交流群</h2><br /><br /><br />
+		<h3 style="left:105px;position: absolute;color:grey">丢人梦魂: 有内味了吗？[图片]</h3>
+		</div>
+	</div>
+		
+	
+	<div class="topTitle">
+	
+	
+	<div class="expbg" id="expbg"></div>
+	<div class="expmain" id="expmain"></div>
+	<div class="exptext" id="exptext"></div>
+	
+	<img class="avatar" id="avatar" src="" height="100%" width="100%" />
+	<div class="name" id="name"></div>
+	<div class="exit" id="exit" onClick="tc()">退出登录</div>
+	<div class="level" >Lv.<span style="color:red" id="level">0</span></div>
+	<img class="icon" id="icon" src="img/icon.ico" height="100%" width="100%" style="left:20px;top:9px;width:60px;height:64px;position: absolute;"/>
+	<img class="logo" id="logo" src="img/logo.png" height="100%" width="100%" style="left:90px;top:9px;width:180px;height:64px;position: absolute"/>
+	</div>
+
+  
+  	<!-- <iframe id="main" src="frame/grop-frameset.html" width="785" height="600"></iframe> -->
+	<script type="text/javascript" src="js/tuichu.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

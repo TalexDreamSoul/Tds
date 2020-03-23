@@ -1,0 +1,13 @@
+Settings:
+    type: Chinese
+    name: "简体中文"
+    Author: TalexDreamSoul
+
+
+Help:
+  -  "§b§m+-——————————{prefix}§b§m——————————-+"
+  -  "§b/ct type msg §7#发送消息"
+  -  "§b/ct clear §7#清屏,拥有 ct.clear 权限即可"
+  -  "§b/ct time §7#看时间,拥有 ct.time 权限即可"
+  -  "§b/ct reload §7#重载插件"
+  -  "§b§m+-——————————{prefix}§b§m——————————-+"

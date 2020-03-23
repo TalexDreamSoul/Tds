@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+<	link href="css/bubbles.css" rel="stylesheet" type="text/css" />
+    <link href="css/panel.css" rel="stylesheet" type="text/css" />
+	
+    <style type="text/css">
+      body,html{
+      	padding: 0;
+      }
+      #main{
+    		border:2px solid #ccc;
+    		box-shadow: 0px 5px 20px #ccc;
+    		position: absolute;
+    		top: 50%;left: 50%;
+    		transform: translate(-50%,-50%);
+      }
+    </style>
+</head>
+<script type="text/javascript">
+  
+  function check(){
+	
+	
+	
+	setTimeout( function(){
+	
+		<!-- alert("正在检查..."); -->
+	
+		$.ajax({
+			type: "POST",
+			url: "title.php",
+			data: {"type" : "check"}, //参数
+			success: function(msg){
+			
+				<!-- alert("json: " + msg); -->
+				
+				if(msg == "unlogin"){
+				
+					alert("请先登录后重试!");
+					window.location.href="./login.html";
+					
+					
+				}else{
+					
+					<!-- var ev = eval('(' + msg + ')'); -->
+					<!-- for(var i in msg){ -->
+						<!-- alert(msg[i] + ">" + i); -->
+					<!-- } -->
+					
+					<!-- alert("233!"); -->
+					
+					var imgTx = document.getElementById("avatar");	
+
+					imgTx.src="http://q1.qlogo.cn/g?b=qq&nk=" + msg["userid"] + "&s=640";
+					imgTx.style.borderRadius = "50px";
+					imgTx.style.left = "75%";
+					imgTx.style.top = "10%";
+					imgTx.style.position = "absolute";
+					imgTx.style.width = "64px";
+					imgTx.style.height = "64px";
+					
+					
+					var name = document.getElementById("name");	
+					
+					name.innerHTML = msg["username"];
+					
+					var json = JSON.parse(msg.exp);
+					
+					<!-- 进度条进度 -->
+					
+					$.ajax({
+						type: "POST",
+						url: "schedule.php",
+						data: {"now" : json["now"] , "max" : json["max"]}, //参数
+						success: function(msg){
+						
+							var expmain  = document.getElementById("expmain");	
+							expmain.style.width = msg + "px";
+							
+							}
+						});
+					
+					
+					<!-- name.style.top = "30px"; -->
+					<!-- name.style.left = "75%"; -->
+					<!-- name.style.position = "absolute"; -->
+					
+					<!-- document.write(msg["exp"]); -->
+					
+					var text = document.getElementById("exptext");	
+					text.innerHTML = "进度: " + json["now"] + "/" + json["max"]  + "&nbsp;下一等级: " + json["next"] + "点";
+					<!-- alert(json["now"]); -->
+					<!-- alert(msg["exp"].["now"]); -->
+					
+					<!-- var exp = '(' + msg["exp"] + ')'; -->
+					<!-- alert(exp); -->
+					<!-- for(var i in json){ -->
+						<!-- alert(json[i]); -->
+					<!-- } -->
+					
+					var level = document.getElementById("level");	
+					level.innerHTML = msg["level"];
+				
+				}
+				
+				}
+			});
+			
+	}, 100 );//延迟2000毫秒
+  
+  }
+</script>
+  <body onload="check()">
+    
+	<div class="topTitle">
+	
+	
+	<div class="expbg" id="expbg"></div>
+	<div class="expmain" id="expmain"></div>
+	<div class="exptext" id="exptext"></div>
+	
+	<img class="avatar" id="avatar" src="" height="100%" width="100%" />
+	<div class="name" id="name"></div>
+	<div class="exit" id="exit" onClick="tc()">退出登录</div>
+	<div class="level" >Lv.<span style="color:red" id="level">0</span></div>
+	<img class="icon" id="icon" src="img/icon.ico" height="100%" width="100%" style="left:20px;top:9px;width:60px;height:64px;position: absolute;"/>
+	<img class="logo" id="logo" src="img/logo.png" height="100%" width="100%" style="left:90px;top:9px;width:180px;height:64px;position: absolute"/>
+	</div>
+
+  
+  	<!-- <iframe id="main" src="frame/grop-frameset.html" width="785" height="600"></iframe> -->
+	<script type="text/javascript" src="js/tuichu.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	
+  </body>
+
+
+ </html>

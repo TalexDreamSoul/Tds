@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="zh-CN" />
+	<meta name="renderer" content="webkit" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no" />
+
+	<title>LPCR - 登录</title>
+
+	<link href="./template/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
+	<link href="./css/loading.css" rel="stylesheet">
+	<link href="img/icon.ico" rel="shortcut icon">
+
+
+</head>
+
+<body>
+	
+	<!-- <div id = "message" class = "message">233<div> -->
+	
+	<div id='view-bg'>	
+	
+		<!-- <div id = "message" class = "message">233<div> -->
+	
+		<img src="img/bg.jpg" height="100%" width="100%" />
+		
+		<!-- <div id = "message" class = "message">233<div> -->
+		
+	</div>
+	<div id='login-view' class="show-ui">
+	
+		<!-- <div id = "message" class = "message">233<div> -->
+	
+		<div id='login-sub'>
+			<div class="container-fluid">
+				<div class="row">
+					<img id='logo' src="img/logo.png">
+					<br>
+				</div>
+				<div id='login-form' class="row">
+					<form class="form-horizontal" role="form">
+					<form action="" method="post" id="reg-form" enctype="multipart/form-data">
+						<div class="form-group has-feedback">
+							<div class="col-sm-12">
+								<input type="text" name="username" class="form-control border-1 minput" id="login-userid" placeholder="用户昵称">
+								<span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+
+							</div>
+						</div>
+						<div class="form-group has-feedback">
+							<div class="col-sm-12">
+								<input type="password" name = "password" class="form-control border-1 minput" id="login-passwd" placeholder="用户密码">
+								<span class="glyphicon glyphicon-th form-control-feedback" aria-hidden="true"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-4 col-sm-6"></div>
+							<div class="col-xs-8 col-sm-6">
+								<a id="form-help" class="text-right help-text" onclick="bounce('LPCR实施内测独裁模式,您的密码忘记之后请联系梦魂修改！')">忘记密码?</a>
+							</div>
+						</div>
+						<div class="loader-16" id="loader-16"></div>
+						<div class="form-group" id="form">
+							<!-- <div class="col-sm-12"> -->
+								<div id='loginButton' class="loginButton btn btn-default btn-info border-1" onclick="run()">
+									<b>登 &nbsp;&nbsp;  录</b>
+								</div>
+							<!-- </div> -->
+						</div>
+					</form>
+					<!-- 表单结束 -->
+				</div>
+				<div id="copyright" class="row text-justify">
+					<span><h4>©2020 LosePeopleChatRoom <br />设计版权:  TDesignS</h4></span>
+					<!-- <div id = "message" class = "message">233<div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id = "message" class = "message" onclick="bounce();">233</div>
+	<div id = "protocol" class = "protocol">
+	
+	<div id="protocol2" class="protocol2"><h1>协议</h1></div>
+	<h4>1. 您对您的账号只有<strong>使用权</strong>！<br />2. 您不能做出以下行为: 包括且不限于<strong>转让,租借</strong>您的账号给他人！<br />3. 我们可以在不通知您的情况下对您的账号做出以下行为: 包括且不限于<strong>删除,修改</strong>！<br />4. 帐户持有人应妥善保管您的账号,若您因以下情况造成损失,我们概不负责！<br />包括且不限于: 忘记密码,忘记账号,账号被盗<br />5. 当您登录的时候默认代表您同意本协议！</h4>
+	</div>
+	
+	<script type="text/javascript" src="js/loading.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<!-- <script type="text/javascript" src="js/move.js"></script> -->
+	
+</body>
+</html>

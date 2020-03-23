@@ -1,0 +1,68 @@
+/** 通过对小正方形旋转45度解决 **/
+.leftBubble::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    margin-top: -8px;
+    background: inherit;
+    transform: rotate(45deg);
+
+}
+
+
+
+.leftBubble {
+    float:left;
+    width: 233px;
+    height: 66px;
+    margin: 50px;
+    background: #4cd7c7;
+    border-bottom-color: #4cd7c7;
+    color: #fff;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 5px 12px 5px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    position: absolute;
+    word-break: break-all;
+    opacity: 0.9;
+    display: inline;
+	left: 40px;
+}
+
+.rightBubble {
+    float:right;
+    width: 233px;
+    height: 66px;
+    margin: 30px;
+    background: #C86DD7;
+    border-bottom-color: #C86DD7;
+    color: #fff;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 5px 12px 5px 12px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    position: relative;
+    word-break: break-all;
+    opacity: 0.9;
+    display:inline;
+	left: 1040px;
+}
+
+.rightBubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 228px;
+    width: 10px;
+    height: 10px;
+    margin-top: -10px;
+    background: inherit;
+    transform: rotate(45deg);
+	left: 1040px;
+}

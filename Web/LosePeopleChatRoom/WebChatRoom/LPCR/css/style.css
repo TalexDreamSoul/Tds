@@ -1,0 +1,227 @@
+html, body
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.bg-hover
+{
+	filter: blur(10px);
+}
+.bg-hover::before
+{
+	filter: blur(10px);
+	transform: scale(1.1);
+}
+.text-input
+{
+	width: 200px;
+}
+.input
+{
+	opacity: 0.25;
+}
+
+.text-input-hover
+{
+	width: 600px;
+}
+.input-hover
+{
+	opacity: 0.75;
+}
+
+#background
+{
+	background-image: url("../imgs/bg.png");
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	transition: all 0.5s;
+}
+#background::before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	transition: all 0.5s;
+	background-image: url("../imgs/bg.png");
+	background-size: cover;
+}
+#text
+{
+	transition: width 0.5s;
+	height: 40px;
+	background: #ffffff;
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+	color: #000000;
+	font-size: 15px;
+	border-radius: 20px;
+	box-shadow: #FFFFFF;
+	border: 0 none;
+	outline: none;
+	padding: 0;
+	text-transform: none;
+}
+#text-label
+{
+	transition: opacity 0.5s;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: #000000;
+}
+.search
+{
+	transform: translate(68px, -50%);
+	opacity: 0.25;
+}
+.search-hover
+{
+	transform: translate(268px, -50%);
+	opacity: 0.75;
+}
+.hitokoto
+{
+	opacity: 0.75;
+	position: absolute;
+	top: 90%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	border: none;
+	color: #FFFFFF;
+	font-size: 14px;
+	transition: all 0.2s;
+}
+.hitokoto:hover
+{
+	background: #FFFFFF;
+	color: #000000;
+	transition: all 0.2s;
+}
+
+.mark-td
+{
+	padding: 0;
+	margin: 0;
+	border-style: none;
+	height: 29px;
+}
+
+.mark
+{
+	padding: 0;
+	margin: 0 15px 5px 15px;
+	height: 30px;
+	width: 80px;
+	transition: all 0.5s;
+	line-height: 30px;
+	text-decoration: none;
+	color: #FFFFFF;
+	border-radius: 15px;
+	cursor: pointer;
+	font-size: 10px;
+	display: inline-block;
+	text-align: center;
+}
+
+.mark:hover
+{
+	background: #FFFFFF;
+	opacity: 0.5;
+	color: #00FF00;
+	transition: all 0.5s;
+}
+
+#search-ico
+{
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	margin: 0;
+	padding: 0;
+	height: 24px;
+	width: 24px;
+	border: none;
+	border-radius: 15px;
+	background: #333333;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+#hitokoto-creator
+{
+	transition: all 0.2s;
+	color: #000000;
+}
+
+#underline
+{
+	margin: 0;
+	padding: 0;
+	height: 2px;
+	background: #00FF00;
+	transition: all 0.3s;
+}
+
+#time-div
+{
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	transition: all 0.3s;
+}
+
+#interface01
+{
+	margin: 0;
+	padding: 0;
+	border: none;
+	transition: all 0.5s;
+}
+
+#interface02
+{
+	margin: 0;
+	padding: 0;
+	transition: all 0.5s;
+}
+
+#bookmark
+{
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	transition: all 0.5s;
+}
+
+.time
+{
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: "Microsoft YaHei UI", serif;
+	font-size: 40px;
+	color: #FFFFFF;
+}

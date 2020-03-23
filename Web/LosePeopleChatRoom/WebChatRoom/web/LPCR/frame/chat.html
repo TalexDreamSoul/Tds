@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+	<link href="css/bubbles.css" rel="stylesheet" type="text/css" />
+    <link href="css/panel.css" rel="stylesheet" type="text/css" />
+	
+	<script src="js/members.js" type="text/javascript" charset="utf-8"></script>
+	
+    <style type="text/css">
+      body,html{
+      	padding: 0;
+      }
+      #main{
+    		border:2px solid #ccc;
+    		box-shadow: 0px 5px 20px #ccc;
+    		position: absolute;
+    		top: 50%;left: 50%;
+    		transform: translate(-50%,-50%);
+      }
+    </style>
+</head>
+  <body onload="install()">
+    
+	<!-- 聊天布局 -->
+	
+	<div class="chat" id="chat">
+		
+		<div class="groupname">&nbsp;&nbsp;&nbsp;Bukkit插件开发交流群</div>
+		
+		<div class="mainchat" id="mainchat">
+		
+			<div class="systemBubble" id="systemBubble" name="systemBubble" style="color:white;top:30px;visibility:hidden">
+			<span style="color:blue;">可乐酱</span>加入了聊天室
+			</div>
+			<!-- <div class="systemBubble" id="systemBubble" name="systemBubble" style="color:white;top:70px"> -->
+			<!-- <span style="color:blue;">花生酱</span>加入了聊天室 -->
+			<!-- </div> -->
+			
+			<div class="targetBubble" name="targetBubble-0" id="targetBubble" style="margin: 20px auto;visibility:hidden;">
+				<!-- 气泡 -->
+				<img class="imgBubble" id="imgBubble" src="http://q1.qlogo.cn/g?b=qq&nk=2418876761&s=640" height="100%" width="100%" style="float:right;border:orange solid 2px;display:block-inline;margin:34px auto;left:1050px;position:relative;width:85px;height:85px"/>
+				<div class="rightBubble" id="qp2" style="background:orange">
+				<!-- 内容 -->
+				<span style="color:white"><span style="color:blue">@果粒橙 @雪碧酱 @可乐酱</span>欢迎各位,欢迎各位来到梦魂的聊天室！</span>
+				<div style="left:0px;top: -40%;font-size:15px;color:grey;position:absolute"><span style="color:#FF9900;font-weight:bold">[本群群主]</span>TalexDreamSoul</div>
+				</div>
+			</div>
+			
+			<div class="sBubble" name="sBubble" id="sBubble" style="margin: 60px auto;visibility:hidden;">
+				<!-- 气泡 -->
+				<img class="imgBubble" id="imgBubble" src="http://q1.qlogo.cn/g?b=qq&nk=1727534436&s=640" height="100%" width="100%" style="display:block-inline;margin:34px auto;left:0px;position:absolute;width:90px;height:90px"/>
+				<div class="leftBubble" id="qp1">
+				<!-- 内容 -->
+				<span style="color:white"><span style="color:blue">@TalexDreamSoul</span> 丢人梦魂<br />这是LPCR,欢迎你！~<br />后续开放更多功能,喵喵喵！</span>
+				<div style="left:0px;top: -30%;font-size:15px;color:grey;position:absolute"><span style="color:red;font-weight:bold">[管理猿]</span>可乐酱</div>
+				</div>
+			</div>
+			
+			<!-- <div class="bubbles" name="bubble-0"> -->
+				<!-- 气泡 -->
+				<!-- <img class="imgBubble" id="imgBubble" src="http://q1.qlogo.cn/g?b=qq&nk=179793046&s=640" height="100%" width="100%" style="display:block-inline;margin:34px auto;left:0px;position:absolute;width:85px;height:85px"/> -->
+				<!-- <div class="leftBubble" id="qp1" style="background:yellow"> -->
+				<!-- 内容 -->
+				<!-- <span style="color:black"><span style="color:blue">@TalexDreamSoul</span> Hello<br />我是老百姓！<br />楼上日常剥削我</span> -->
+				<!-- <div style="left:0px;top: -30%;font-size:15px;color:grey;position:absolute"><span style="color:#CDCDCD;font-weight:bold">[可怜抖M]</span>雪碧酱</div> -->
+				<!-- </div> -->
+			<!-- </div> -->
+
+			<!-- <div class="bubbles" name="bubble-0" style="margin: 240px auto"> -->
+				<!-- 气泡 -->
+				<!-- <img class="imgBubble" id="imgBubble" src="http://q1.qlogo.cn/g?b=qq&nk=3390038158&s=640" height="100%" width="100%" style="border:blue solid 1px;display:block-inline;margin:34px auto;left:0px;position:absolute;width:85px;height:85px"/> -->
+				<!-- <div class="leftBubble" id="qp1" style="background:pink"> -->
+				<!-- 内容 -->
+				<!-- <span style="color:white"><span style="color:blue">@TalexDreamSoul</span> 丢人梦魂<br />反正有问题肯定是你丢人<br />丢人丢人很丢人！</span> -->
+				<!-- <div style="left:0px;top: -30%;font-size:15px;color:grey;position:absolute"><span style="color:purple;font-weight:bold">[技术支持]</span>果粒橙[冰镇]</div> -->
+				<!-- </div> -->
+			<!-- </div> -->
+			
+			<!-- <div class="bubbles" name="bubble-0" style="margin: 360px auto"> -->
+				<!-- 气泡 -->
+				<!-- <img class="imgBubble" id="imgBubble" src="http://q1.qlogo.cn/g?b=qq&nk=2418876761&s=640" height="100%" width="100%" style="float:right;border:orange solid 2px;display:block-inline;margin:34px auto;left:1050px;position:relative;width:85px;height:85px"/> -->
+				<!-- <div class="rightBubble" id="qp2" style="background:orange"> -->
+				<!-- 内容 -->
+				<!-- <span style="color:white"><span style="color:blue">@果粒橙 @雪碧酱 @可乐酱</span> 机器人正在开发<br />我本来就很丢人233</span> -->
+				<!-- <div style="left:0px;top: -30%;font-size:15px;color:grey;position:absolute"><span style="color:#FF9900;font-weight:bold">[本群群主]</span>TalexDreamSoul</div> -->
+				<!-- </div> -->
+			<!-- </div> -->
+		
+		</div>
+		
+		
+		
+		<div class="inputchat" id="inputchat">
+				<textarea onkeydown="bind(event)" class="text" id="text" />请在此输入你要发送的内容...</textarea>
+			<div class="sendput" id="sendput" onclick="send()">
+				&nbsp;&nbsp;&nbsp;发送
+				<img class="send" id="send" src="img/send.png" height="100%" width="100%" style="left:5px;position:relative;width:35px;width:35px"/>
+		</div>
+		
+	</div>
+
+
+	
+  </body>
+
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	
+ </html>

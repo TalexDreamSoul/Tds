@@ -1,0 +1,5 @@
+#插件前缀
+Prefix: "§7[§eColorfulTitle§7] "
+
+#聊天栏时间前缀,为空将会不添加
+Time: "&7[&e{time}&7]"

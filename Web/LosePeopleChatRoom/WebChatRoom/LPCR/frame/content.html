@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+      body,
+      html {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        margin: 0;
+        padding: 0;
+        font-family: "微软雅黑";
+      }
+      
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      
+      h3 {
+        height: 35px;
+        margin: 0;
+        padding-left: 10px;
+        background: #E9E9E9;
+        line-height: 35px;
+      }
+      
+      #wrap {
+        width: 600px;
+        height: 525px;
+      }
+      
+      .title {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        height: 30px;
+      }
+      ul {
+        margin: 35px 0px;
+        padding: 0;
+      }
+      
+      li {
+        list-style: none;
+        float: left;
+      }
+      
+      .content-left {
+        height: 60px;
+        
+      }
+      
+      .content-left span,.content-right span {
+        font-size: 14px;
+      }
+      
+      .content-left p,.content-right p {
+        background: #abcdef;
+        padding: 5px;
+		border-radius:5px;
+      }
+      
+      .content>ul>li {
+        width: 100%;
+      }
+      
+      .content-left li:first-child {
+        max-width: 50px;
+        min-width: 20px;
+      }
+      
+      .content-left li:nth-child(2) {
+        margin-left: 20px;
+      }
+      
+      .content-right {
+        float: right;
+        height: 60px;
+      }
+      
+      .content-right li {
+        float: right;
+      }
+      
+      .content-right li:first-child {
+        max-width: 50px;
+        min-width: 20px;
+      }
+      .content-right li:nth-child(2) {
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div class="title">
+        <h3>PHP开发</h3>
+      </div>
+      <div class="content">
+        <ul style="overflow-x:auto; height: 390px;padding: 0px 10px;" id="msg">
+		<?php foreach($rows as $k=>$v){?>
+		  <li>
+            <ul 
+			<?php if($v['is_mine']){echo 'class="content-right"';}else{echo 'class="content-left"';}?>
+			style="overflow-x:auto;">
+              <li><img src="<?php echo $v['profile']?>" alt="" width="50px" /></li>
+              <li>
+                <span><?php echo $v['nickname']?></span>
+                <p><?php echo $v['content']?></p>
+              </li>
+            </ul>
+          </li>
+		  <?php }?>
+        </ul>
+      </div>
+    </div>
+	
+	
+  </body>
+</html>
+<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	$('#msg').scrollTop($('#msg')[0].scrollHeight);
+});
+setInterval(function(){
+	$.ajax({
+	   type: "get",
+	   url: "content.php",
+	   dataType:"json",
+	   success: function(msg){
+		 var nr = '';
+		 for(var i = 0;i<msg.length;i++){
+		  nr += '<li>';
+            nr += '<ul ';
+			if(msg[i].is_mine){
+				nr += 'class="content-right"';
+			}else{
+				nr += 'class="content-left"';
+			}
+			  nr += '>';
+              nr += '<li><img src="'+msg[i].profile+'" alt="" width="50px" /></li>';
+              nr += '<li><span>'+msg[i].nickname+'</span><p>'+msg[i].content+'</p></li>';
+            nr += '</ul>';
+          nr += '</li>';
+		 }
+		 $('#msg').html(nr);
+		 $('#msg').scrollTop($('#msg')[0].scrollHeight);
+	   }
+	});
+},100);
+</script>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Simple Examples</title>
+    <style>
+      body{
+      	overflow: hidden;
+      	margin: 0;padding: 0;
+      	font-family: "微软雅黑";
+      }
+	  .emotion{
+		  border-top:1px #ccc solid;
+		  border-bottom:1px #ccc solid;
+		  height:30px;
+		  background:#f9f9f9;
+	  }
+      form {
+        margin: 0;
+      }
+      textarea {
+	    resize:none;
+		width:100%;
+		height:80px;
+		border:0;
+		border-bottom:1px #ccc solid;
+      }
+      #btn{
+        border: none;
+      	position: absolute;
+      	left:80%;
+      	top: 75%;
+      	width: 100px;height: 25px;
+      	background:#84C0DF ;
+      	outline: none;
+      	color: white;
+      	border-radius: 5px;
+      }
+      #btn:hover{
+      	background:#abcdef;
+      }
+	  #tip {
+	    display:block;
+		position: absolute;
+		top: 50px;
+		left: 50%;
+		display: none;
+		z-index: 9999;
+		border:1px #f0f0f0 solid;
+		width:180px;
+		height:40px;
+		line-height:40px;
+		text-align:center;
+		border-radius:5px;
+		color:#666;
+		font-weight:normal;
+		box-shadow: 0px 5px 20px #ccc;
+	  }
+    </style>
+
+  </head>
+  <body>
+    <div class="emotion"></div>
+    <button id="btn">发送</button>
+	<form action="" method="post">
+		<textarea name="content" id="content"></textarea>   
+	</form>
+	<strong id="tip"></strong>
+  </body>
+</html>
+<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$('#btn').click(function(){
+	var content = $('#content').val();
+	if(content){
+		//$('form')[0].submit();
+		$.post("send.php", { 'content': content },
+          function(data){
+			$('#content').val('');
+        }); //使用post方式触发ajax
+	}else{
+		showTip('消息不能为空！','warning');
+	}
+});
+//tip是提示信息，type:'success'是成功信息，'danger'是失败信息,'info'是普通信息,'warning'是警告信息
+function showTip(tip, type) {
+    var $tip = $('#tip');
+    $tip.stop(true).prop('class', 'alert alert-' + type).text(tip).css('margin-left', - $tip.outerWidth() / 2).fadeIn(500).delay(1000).fadeOut(500);
+}
+</script>

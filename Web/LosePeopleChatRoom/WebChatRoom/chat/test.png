@@ -1,0 +1,6 @@
+1、firebug的使用和安装
+2、margin外边距
+margin:40px;就是上下左右分别是40px
+margin:40px 30px;就是上下是40px,左右就是30px
+margin:40px 30px 20px ;就是上是40px,左右就是30px;下是20px
+margin:40px 30px 20px 10px ;就是上是40px,右就是30px;下是20px；左就是10px

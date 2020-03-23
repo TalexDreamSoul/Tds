@@ -1,0 +1,6 @@
+name: ColorfulTitle
+main: cn.tds.colorfultitle.Main
+Author: TalexDreamSoul
+version: 2.1.0
+commands:
+   ct:

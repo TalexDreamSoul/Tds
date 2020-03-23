@@ -1,0 +1,81 @@
+@charset "utf-8";
+body,html,input{
+	font-family: "微软雅黑";
+
+}
+.login-content{
+  width: 300px;
+  height: 320px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-80%);
+  opacity: 0.95;
+}
+#head{
+	width: 300px;height: 95px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+#reg-btn{
+  width: 200px;height: 40px;
+  border: none;
+  outline: none;
+  background:rgb(82,150,208);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+}
+#reg-form div{
+	position: relative;
+}
+#reg-form div>span{
+  display: inline-block;
+  border-radius: 5px;
+  width: 300px;height: 40px;
+  background: #abcdef;
+	position: absolute;
+	left:320px;
+	top:2px;
+	line-height: 40px;
+	display: none;
+	overflow: hidden;
+	opacity: 0.7;
+}
+#reg-btn:hover{
+  background:darkturquoise;
+}
+#head span{
+	display: inline-block;
+	width: 100px;height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+#head span>img{
+	/*transform: translate(-25%,-25%);*/
+	width:100%;
+}
+#reg-form input{
+  width: 300px;height: 35px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  outline: none;
+  border: 0.5px solid rgba(204,204,204,0.8);
+  letter-spacing:1px;
+  font-size: 1rem;
+  text-indent: 0.8em;
+	width: 300px;height: 40px;
+	margin-bottom: 20px;
+	color: #C44F00;
+}
+#reg-form #reg-head,#reg-form #reg-btn{
+	color: white;
+}
+#mask{
+	width: 100%;height:42px;
+  position: absolute;
+  top: 40px;
+  z-index: 2;background:#003147;
+}

@@ -1,0 +1,22 @@
+Settings:
+    #玩家感染后中毒时间(tick) 1 s = 20 tick
+    time: 300
+    #玩家感染冠状病毒提示
+    msg: "§4nCov-Bat §f>>> §c你感染了冠状病毒,请戴上口罩！"
+    #玩家感染病毒导致死亡
+    msgDeath: "§4nCov-Bat §f>>> §c你感染了冠状病毒导致肺炎而死！"
+    #僵尸村民感染冠状病毒彻底变为僵尸提示
+    zombieMsg: "§4nCov-Bat §f>>> §c你的村民在变化过程中感染了冠状病毒,彻底变为僵尸！"
+    #村民变异后名字
+    zombieName: "§4nCov§c变异村民"
+    #任何头上物品名称或lore含有即可视为口罩
+    MaskKeyWord: "§a§b"
+Random:
+    #被蝙蝠攻击导致感染冠状病毒
+    bat: 20.0
+    #被蝙蝠攻击导致死亡
+    batDeath: 1.0
+    #僵尸村民变身失败
+    zombie: 50.0
+    #蝙蝠生成概率加成
+    batSpawn: 100%

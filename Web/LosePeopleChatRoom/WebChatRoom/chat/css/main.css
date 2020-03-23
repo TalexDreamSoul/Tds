@@ -1,0 +1,31 @@
+/*body{*/
+/*    background: linear-gradient(135deg, #3899ae, #C86DD7);*/
+/*    background-attachment: fixed;*/
+/*}*/
+
+
+/*.panel {*/
+/*    background: whitesmoke;*/
+/*    background-attachment: fixed;*/
+/*    margin: 40px auto;*/
+/*    font-size: 15px;*/
+/*    font-family: "Helvetica Neue", Helvetica, Microsoft Yahei;*/
+/*    width: 700px;*/
+/*    height: 450px;*/
+/*    !*padding: 3px 3px 3px 3px;*!*/
+/*    box-shadow: white 3px 3px 25px;*/
+/*    border-radius: 10px;*/
+/*    !*position: absolute;*!*/
+/*    -webkit-filter: blur(60/@rem);*/
+/*    -moz-filter: blur(60/@rem);*/
+/*    -o-filter: blur(60/@rem);*/
+/*    -ms-filter: blur(60/@rem);*/
+/*    filter: blur(60/@rem);*/
+/*    overflow: hidden;  !*这个是必须加的，否则会有阴影层*!*/
+/*    !*border:3px solid #ddd;*!*/
+/*    !*border-image: -webkit-linear-gradient(#d7d7d7, #C86DD7) 20 20;*!*/
+/*    !*border-image: -moz-linear-gradient(#3899ae, #C86DD7) 20 20;*!*/
+/*    !*border-image: -o-linear-gradient(#3899ae, #C86DD7) 20 20;*!*/
+/*    !*border-image: linear-gradient(#3899ae, #C86DD7) 20 20;*!*/
+/*    !*overflow-y:scroll;*!*/
+/*}*/

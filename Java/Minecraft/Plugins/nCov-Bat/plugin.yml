@@ -1,0 +1,6 @@
+name: nCov-Bat
+main: cn.zcraft.tds.Main
+version: 1.0
+author: TalexDreamSoul
+commands: 
+  ncb: 
