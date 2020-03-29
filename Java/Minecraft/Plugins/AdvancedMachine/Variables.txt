@@ -1,0 +1,6 @@
+{prefix} #插件前缀
+{player} #玩家名
+{tag} #玩家别名
+{type} #机器类别
+{machine} #机器名
+{keycode} #机器识别码

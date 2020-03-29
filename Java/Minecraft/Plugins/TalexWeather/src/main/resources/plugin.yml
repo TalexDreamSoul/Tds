@@ -1,0 +1,6 @@
+name: TalexWeather
+version: ${project.version}
+main: talexweather.main.Main
+api-version: 1.13
+prefix: TW
+authors: [TalexDreamSoul]

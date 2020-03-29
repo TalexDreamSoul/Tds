@@ -1,0 +1,6 @@
+name: iCraftAddon
+version: 1.0-SNAPSHOT
+main: icraftaddon.main.Main
+prefix: iCA
+depend: [iCraft]
+authors: [TalexDreamSoul]

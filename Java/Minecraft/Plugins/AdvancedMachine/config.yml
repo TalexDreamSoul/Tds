@@ -1,0 +1,21 @@
+#调试模式
+Debug: false
+
+#语言文件
+Language: Chinese
+
+#插件前缀
+Prefix: §7[§e高级§8机械§7] 
+
+
+#用破碎锤敲碎后名字叫啥 如果不写默认为 MaterialName
+BreakName: "§a破碎的 §n{name}"
+
+#用破碎锤敲碎后变成什么
+#格式: a:x-b:x (x代表附加值,没有请填写:0或不填写)
+#可在游戏内输入指令添加 (不支持NBT与MOD物品)
+BreakAXE:
+    - "COBBLESTONE:0-GRAVEL:0"
+    - "GRAVEL:0-SAND:0"
+    - "NETHERRACK:0-ENDER_STONE:0"
+    

@@ -1,0 +1,66 @@
+Settings:
+    type: Chinese
+    name: "中文"
+    Author: TalexDreamSoul
+
+
+Help:
+  -  "§b§m+-——————————{prefix}§m——————————-+"
+  -  "§b/am msg type hasPrefix msg §7#发送消息"
+  -  "§8type: 0 后台 1 公告 2 标题 3 OP可见公告 4 DeBug\n"
+  -  "§b/am give type <player> §7#给予某个物品"
+  -  "§b/am breakgui §7#为自己打开破碎锤配置界面"
+  -  "§b/am debug true/false §7#切换配置模式"
+  -  "§b/am reload §7#Reload config."
+  -  "§b§m+-——————————{prefix}§m——————————-+"
+
+WithoutPermission: "§c您没有使用此命令的权限！"
+
+Block:
+    Place: "§a你放下了 §b{machine} §a."
+    Break: "§c你拆除了 §b{machine} §c."
+
+#破碎机配置
+BlockBreaker:
+  Name: "§c破碎机"
+  Material: "FURNACE"
+  Lore:
+    - "§a在下方有水流的情况下"
+    - "§e会自动破坏四周方块掉落到上一格"
+    - ""
+    - "§0§0§0§1" #此行为侦测关键字，请勿修改
+
+BlockMaker:
+  Name: "§c刷石机"
+  Material: "FURNACE"
+  Lore:
+    - "§a每秒产生一个圆石"
+    - ""
+    - "§0§0§0§2"
+
+BlockCompress:
+  Name: "§c压缩机§6§6§6" #必须包含 §6§6§6
+  Material: "FURNACE"
+  Lore:
+    - "§a将九个物品压缩为一个"
+    - ""
+    - "§0§0§0§3"
+
+BreakAXE:
+  Name: "§c破碎锤"
+  Material: "STONE_SPADE"
+  Lore:
+    - "§a破碎一切"
+    - ""
+    - "§0§0§0§4"
+
+BreakEnchant:
+  Name: "§c工具交换"
+  Material: "ENCHANTED_BOOK"
+  Lore:
+    - "§6将破碎锤与附魔书放到铁砧打造"
+    - "§a将会消耗 10 级经验"
+    - "§3SHIFT + 右键 §c触发"
+    - ""
+    - "§0§0§0§4§1"
+

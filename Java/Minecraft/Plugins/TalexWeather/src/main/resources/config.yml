@@ -1,0 +1,7 @@
+#您的APP-ID 请到这里申请: https://market.aliyun.com/products/57126001/cmapi014302.html#sku=yuncode830200000
+
+
+#天气消息
+WeatherMessage:
+  - "§a玩家 §b{name} §7- §b[city]"
+  - "§e"

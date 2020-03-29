@@ -1,0 +1,9 @@
+name: TalexBanItem
+version: ${project.version}
+main: main.talexbanitem.TalexBanItem
+prefix: TBI
+authors: [TalexDreamSoul]
+description: Advanced ban item
+
+commands:
+  tbl:

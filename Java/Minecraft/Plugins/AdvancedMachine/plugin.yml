@@ -1,0 +1,6 @@
+name: AdvancedMachine
+main: cn.tds.zcraft.Main
+Author: TalexDreamSoul
+version: 1.0.0
+commands:
+   am:

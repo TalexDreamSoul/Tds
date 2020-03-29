@@ -1,0 +1,9 @@
+name: TalexBanItem
+version: 1.0-SNAPSHOT
+main: main.talexbanitem.TalexBanItem
+prefix: TBI
+authors: [TalexDreamSoul]
+description: Advanced ban item
+
+commands:
+  tbl:
