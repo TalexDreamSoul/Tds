@@ -2,6 +2,8 @@ package cn.tds.events;
 
 import java.util.List;
 
+import cn.tds.utils.*;
+import cn.tds.zcraft.Machines;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -11,11 +13,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
-import cn.tds.utils.AdvancedUtil;
-import cn.tds.utils.TalexFiles;
-import cn.tds.utils.ItemUtil;
-import cn.tds.utils.MessagesUtil;
-import cn.tds.utils.RunnableUtil;
 import cn.tds.zcraft.Main;
 
 public class BlockBreak implements Listener{
@@ -27,10 +24,36 @@ public class BlockBreak implements Listener{
 		
 		Block block = event.getBlock();
 		Material type = block.getType();
-		
-		MessagesUtil.sendExternalMessage(5, "触发 : BREAK", true);
 
-		if(RunnableUtil.setList(event.getBlock().getLocation(), "BlockBreaker")) {
+		if(type == Material.GLASS){
+			if(Main.FlyingGlass_Blocks.containsKey(event.getPlayer().getName())){
+				List<String> lastBlocks = Main.FlyingGlass_Blocks.get(event.getPlayer().getName());
+				if(lastBlocks.contains(TalexLocationUtil.loc2Str2(block.getLocation()))){
+
+					event.setDropItems(false);
+
+				}
+
+			}
+
+		}
+
+//		MessagesUtil.sendExternalMessage(5, "触发 : BREAK", true);
+
+		for(Machines m : Machines.values()) {
+
+			String machine = m.name();
+
+			boolean back = RunnableUtil.setList(event.getBlock().getLocation(), machine);
+			if(back){
+				event.setDropItems(false);
+				tip(event.getPlayer(),m.getMachine());
+				break;
+			}
+
+		}
+
+		/*if(RunnableUtil.setList(event.getBlock().getLocation(), "BlockBreaker")) {
 			event.setDropItems(false);
 			tip(event.getPlayer(),"破碎机");
 		} else if(RunnableUtil.setList(event.getBlock().getLocation(), "CobbleStoneMaker")) {
@@ -39,7 +62,21 @@ public class BlockBreak implements Listener{
 		} else if(RunnableUtil.setList(event.getBlock().getLocation(), "BlockCompress")) {
 			event.setDropItems(false);
 			tip(event.getPlayer(),"压缩机");
-		}
+		} else if(RunnableUtil.setList(event.getBlock().getLocation(), "AdvancedCobbleStoneMaker")) {
+			event.setDropItems(false);
+			tip(event.getPlayer(),"高级刷石机");
+		} else if(RunnableUtil.setList(event.getBlock().getLocation(), "SuperCobbleStoneMaker")) {
+			event.setDropItems(false);
+			tip(event.getPlayer(),"超级刷石机");
+		} else if(RunnableUtil.setList(event.getBlock().getLocation(), "IronMaker")) {
+			event.setDropItems(false);
+			tip(event.getPlayer(),"铁矿制造机");
+		} else if(RunnableUtil.setList(event.getBlock().getLocation(), "DivineCobbleStoneMaker")) {
+			event.setDropItems(false);
+			tip(event.getPlayer(),"神级刷石机");
+		}*/
+
+
 
 		Player player = event.getPlayer();
 		@SuppressWarnings("deprecation")

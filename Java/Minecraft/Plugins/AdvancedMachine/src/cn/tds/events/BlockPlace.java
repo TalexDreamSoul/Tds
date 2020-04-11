@@ -14,7 +14,7 @@ import org.bukkit.inventory.ItemStack;
 
 import cn.tds.utils.AdvancedUtil;
 import cn.tds.utils.TalexFiles;
-import cn.tds.utils.LocationUtil;
+import cn.tds.utils.TalexLocationUtil;
 import cn.tds.utils.MessagesUtil;
 import cn.tds.utils.RunnableUtil;
 import cn.tds.zcraft.Main;
@@ -49,7 +49,7 @@ public class BlockPlace implements Listener{
 
 			//给玩家进行提示
 			tip(event.getPlayer(),"破碎机");
-			String str = LocationUtil.loc2Str(event.getBlockPlaced().getLocation());
+			String str = TalexLocationUtil.loc2Str(event.getBlockPlaced().getLocation());
 			Main.BlockBreaker.put(str, false);
 
 
@@ -64,7 +64,7 @@ public class BlockPlace implements Listener{
 
 			//给玩家进行提示
 			tip(event.getPlayer(),"刷石机");
-			String str = LocationUtil.loc2Str(event.getBlockPlaced().getLocation());
+			String str = TalexLocationUtil.loc2Str(event.getBlockPlaced().getLocation());
 			Main.CobbleStoneMaker.put(str, false);
 
 
@@ -79,6 +79,65 @@ public class BlockPlace implements Listener{
 			//给玩家进行提示
 			tip(event.getPlayer(),"压缩机");
 
+		} else if(lore.contains("§0§0§0§2§1")) {
+
+			boolean back = placeMachine("CobbleStoneMaker",event.getBlockPlaced().getLocation());
+			if(!back) {
+				event.getPlayer().sendMessage(thisPrefix + "§a未知的错误！");
+				return;
+			}
+
+			//给玩家进行提示
+			tip(event.getPlayer(),"高级刷石机");
+			String str = TalexLocationUtil.loc2Str(event.getBlockPlaced().getLocation());
+			Main.AdvancedCobbleStoneMaker.put(str, false);
+
+
+			RunnableUtil.Runnable_BlockMakerAddon(str, event.getBlockPlaced().getLocation());
+		} else if(lore.contains("§0§0§0§2§1§2")) {
+
+			boolean back = placeMachine("SuperCobbleStoneMaker",event.getBlockPlaced().getLocation());
+			if(!back) {
+				event.getPlayer().sendMessage(thisPrefix + "§a未知的错误！");
+				return;
+			}
+
+			//给玩家进行提示
+			tip(event.getPlayer(),"超级刷石机");
+			String str = TalexLocationUtil.loc2Str(event.getBlockPlaced().getLocation());
+			Main.SuperCobbleStoneMaker.put(str, false);
+
+
+			RunnableUtil.Runnable_SuperBlockMaker(str, event.getBlockPlaced().getLocation());
+		} else if(lore.contains("§0§0§0§2§1§2§3")) {
+
+			boolean back = placeMachine("IronMaker",event.getBlockPlaced().getLocation());
+			if(!back) {
+				event.getPlayer().sendMessage(thisPrefix + "§a未知的错误！");
+				return;
+			}
+
+			//给玩家进行提示
+			tip(event.getPlayer(),"铁矿制造机");
+			String str = TalexLocationUtil.loc2Str(event.getBlockPlaced().getLocation());
+			Main.IronMaker.put(str, false);
+
+
+			RunnableUtil.Runnable_IronMaker(str, event.getBlockPlaced().getLocation());
+		} else if(lore.contains("§0§0§0§2§1§2§3§4")) {
+
+			boolean back = placeMachine("DivineCobbleStoneMaker",event.getBlockPlaced().getLocation());
+			if(!back) {
+				event.getPlayer().sendMessage(thisPrefix + "§a未知的错误！");
+				return;
+			}
+
+			//给玩家进行提示
+			tip(event.getPlayer(),"神级刷石机");
+			String str = TalexLocationUtil.loc2Str(event.getBlockPlaced().getLocation());
+			Main.DivineCobbleStoneMaker.put(str, false);
+
+			RunnableUtil.Runnable_DivineCobbleStoneMaker(str, event.getBlockPlaced().getLocation());
 		}
 //		if(type == Material.FURNACE) {
 			
@@ -113,7 +172,7 @@ public class BlockPlace implements Listener{
 		try {
 			yaml.save(Main.getPlugin().getDataFolder() + "/machines/" + type + ".yml");
 		} catch (IOException e) {
-			MessagesUtil.sendExternalMessage(5, e.getMessage(), true);
+//			MessagesUtil.sendExternalMessage(5, e.getMessage(), true);
 			MessagesUtil.sendExternalMessage(0, "§4错误 §a位于 §bBlockPlace §a中" + type + "错误",true);
 		}
 		return true;

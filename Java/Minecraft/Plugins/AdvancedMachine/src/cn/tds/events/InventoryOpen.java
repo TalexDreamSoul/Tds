@@ -65,7 +65,7 @@ public class InventoryOpen implements Listener{
 		
 		String str = inv.getName();
 		MessagesUtil.sendExternalMessage(5,"InventoryName: " + str,true);
-		if(str.equals(TalexFiles.langYaml.getString("BlockCompress.Name"))) {
+		if(str.contains(TalexFiles.langYaml.getString("BlockCompress.Name"))) {
 			
 			if(event.getSlot() != 11 && event.getSlot() != 13 && event.getSlot() != 15) {
 				event.setCancelled(true);

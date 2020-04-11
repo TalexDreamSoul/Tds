@@ -104,11 +104,15 @@ public class ItemUtil extends AdvancedUtil{
 	}
 	
 	public static void AdvancedMachineItemGive(String type, Player player, Player givePlayer) {
-		ItemStack item = ItemUtil.String2ItemStack(type);
+		ItemStack item =key2Config(type);
 		 if(item == null) {
 			player.sendMessage(prefix + "§bThe type §c§o" + type + " §bis not a machine.");
 			return;
 		}
+		 if(givePlayer == null){
+			 player.sendMessage(prefix + "§bPlayer is not online!");
+			 return;
+		 }
 			givePlayer.getInventory().addItem(item);
 			player.sendMessage(prefix + "§b你给 §c" + givePlayer.getDisplayName() + "§e" + type + " x" + item.getAmount() + " §b!");
 			givePlayer.sendMessage(prefix + "§b你获得了  §c§o" + type + "x" + item.getAmount() + " §b 通过 "+player.getName()+" !");

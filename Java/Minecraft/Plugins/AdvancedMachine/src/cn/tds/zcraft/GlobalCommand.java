@@ -1,11 +1,17 @@
 package cn.tds.zcraft;
 
+import cn.tds.events.PlayerMove;
 import cn.tds.utils.*;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.List;
 
 public class GlobalCommand implements CommandExecutor{
 	
@@ -17,6 +23,43 @@ public class GlobalCommand implements CommandExecutor{
 			MessagesUtil.sendHelp(sender);
 			return false;
 		}
+		/*if(args[0].equalsIgnoreCase("check")) {
+			if(!(sender instanceof  Player)){
+				return false;
+			}
+
+			Player player = (Player)sender;
+
+			ItemStack itemStack = player.getInventory().getItemInMainHand();
+			if(itemStack == null || itemStack.getType().equals(Material.AIR)){
+				sender.sendMessage(thisPrefix+ "§c你手上没有物品！");
+				return false;
+			}
+
+			ItemMeta itemMeta = itemStack.getItemMeta();
+
+			if(itemMeta.getLore() != null){
+
+
+				List<String> list = itemMeta.getLore();
+				if(list != null){
+					for(String str : list) {
+						if (str.contains("§k§o§u§z§h§a§o")) {
+
+							sender.sendMessage(thisPrefix + "§a你手上的物品是口罩！");
+							return false;
+
+						}
+					}
+				}
+
+
+			}
+			sender.sendMessage(thisPrefix+ "§c你手上的是原版物品！§f(" + itemMeta.getDisplayName() + "§f)");
+			return false;
+
+		}*/
+
 		if(args[0].equalsIgnoreCase("reload")) {
 			if(!(sender.isOp()) && !(sender.hasPermission("am.reload"))) {
 				sender.sendMessage(thisPrefix+ TalexFiles.langYaml.getString("WithoutPermission","§c您没有使用此命令的权限！").replace("&","§"));
@@ -64,6 +107,40 @@ public class GlobalCommand implements CommandExecutor{
 
 		}
 
+		/*if(args[0].equalsIgnoreCase("cov")) {
+			if(!(sender.isOp()) && !(sender.hasPermission("am.cov"))) {
+				sender.sendMessage(thisPrefix+ TalexFiles.langYaml.getString("WithoutPermission","§c您没有使用此命令的权限！").replace("&","§"));
+				return false;
+			}
+			if(args.length < 2) {
+				sender.sendMessage(thisPrefix+"§cWrong prompt! Usage: §b/am cov <player>");
+				return false;
+			}
+			if(args[1].equalsIgnoreCase("all")) {
+
+				for(Player player : Bukkit.getOnlinePlayers()){
+
+					player.sendTitle("","§7- §c你感染了病毒 §7-",0,60,10);
+					PlayerMove.covPlayer(player);
+
+				}
+
+				//sender.sendMessage("所有玩家以获得");
+
+				return false;
+
+			}
+			Player player = Bukkit.getPlayer(args[1]);
+			if(player == null){
+				sender.sendMessage(thisPrefix+"§cSorry , but that player §o" + args[1] + "§c is not online!");
+				return false;
+			}
+			player.sendTitle("","§7- §c你感染了病毒 §7-",0,60,10);
+			PlayerMove.covPlayer(player);
+			return false;
+
+		}*/
+
 		if(args[0].equalsIgnoreCase("msg")) {
 			if(!(sender.isOp()) && !(sender.hasPermission("am.msg"))) {
 				sender.sendMessage(thisPrefix+ TalexFiles.langYaml.getString("WithoutPermission","§c您没有使用此命令的权限！").replace("&","§"));
@@ -101,7 +178,14 @@ public class GlobalCommand implements CommandExecutor{
 			}
 
 			if(args.length == 3) {
-				ItemUtil.AdvancedMachineItemGive(args[1],player,Bukkit.getPlayer(args[2]));
+				Player givePlayer = Bukkit.getPlayerExact(args[2]);
+				if(givePlayer == null || !givePlayer.isOnline()){
+
+					sender.sendMessage(thisPrefix+"§cSorry , but that player §o" + args[2] + "§c is not online!");
+					return false;
+
+				}
+				ItemUtil.AdvancedMachineItemGive(args[1],player,Bukkit.getPlayerExact(args[2]));
 			}else {
 				ItemUtil.AdvancedMachineItemGive(args[1],player);
 			}

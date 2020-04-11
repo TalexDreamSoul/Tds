@@ -24,5 +24,6 @@
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="PaperSpigot-1.12.2" level="project" />
+    <orderEntry type="library" name="ItemLib" level="project" />
   </component>
 </module>

@@ -6,6 +6,8 @@ import org.bukkit.Particle;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.List;
+
 public class BlockUtil {
 	
 	
@@ -25,6 +27,34 @@ public class BlockUtil {
 			dropLoc.getWorld().spawnParticle(Particle.FLAME, dropLoc.getX(), dropLoc.getY(), dropLoc.getZ(), 5, 0.01, 0.01, 0.01, 0.0001, null);
 		}
 		
+	}
+
+	public static boolean PlaceCobbleStone(Location loc,int x,int y,int z){
+
+		Location newLoc = loc.clone();
+		newLoc = newLoc.add(x , y , z);
+		if(!newLoc.getBlock().getType().equals(Material.AIR))
+			return false;
+		newLoc.getBlock().setType(Material.COBBLESTONE);
+		return true;
+
+	}
+
+	public static List<String> FlyingGlassPut(Location old, int addX, int addY, int addZ, List<String> list){
+
+		Location newLoc = old.clone();
+		newLoc = newLoc.add(addX , addY ,addZ);
+		Block block = newLoc.getBlock();
+		if(block.getType() == Material.AIR){
+
+			block.setType(Material.GLASS);
+			List<String> newList = list;
+			newList.add(TalexLocationUtil.loc2Str2(block.getLocation()));
+
+		}
+
+		return list;
+
 	}
 
 }

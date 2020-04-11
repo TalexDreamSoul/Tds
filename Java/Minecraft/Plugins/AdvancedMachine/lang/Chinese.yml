@@ -2,6 +2,7 @@ Settings:
     type: Chinese
     name: "中文"
     Author: TalexDreamSoul
+    Description: "§aWow , Just an example lang, you can change this for you like!"
 
 
 Help:
@@ -12,6 +13,8 @@ Help:
   -  "§b/am breakgui §7#为自己打开破碎锤配置界面"
   -  "§b/am debug true/false §7#切换配置模式"
   -  "§b/am reload §7#Reload config."
+#  -  "§b/am cov <player> §7#让某个玩家体验天伦之乐"
+#  -  "§b/am check §7#检测手上物品是不是口罩"
   -  "§b§m+-——————————{prefix}§m——————————-+"
 
 WithoutPermission: "§c您没有使用此命令的权限！"
@@ -34,9 +37,41 @@ BlockMaker:
   Name: "§c刷石机"
   Material: "FURNACE"
   Lore:
-    - "§a每秒产生一个圆石"
+    - "§a每5秒产生一个圆石"
     - ""
     - "§0§0§0§2"
+
+AdvancedCobbleStoneMaker:
+  Name: "§c高级刷石机"
+  Material: "FURNACE"
+  Lore:
+    - "§a每2.5秒产生一个圆石"
+    - ""
+    - "§0§0§0§2§1"
+
+SuperCobbleStoneMaker:
+  Name: "§c超级刷石机"
+  Material: "FURNACE"
+  Lore:
+    - "§a每1.5秒产生三个圆石"
+    - ""
+    - "§0§0§0§2§1§2"
+
+DivineCobbleStoneMaker:
+  Name: "§c神级刷石机"
+  Material: "FURNACE"
+  Lore:
+    - "§a每1.0秒产生五个圆石"
+    - ""
+    - "§0§0§0§2§1§2§3§4"
+
+IronMaker:
+  Name: "§c铁矿制造机"
+  Material: "FURNACE"
+  Lore:
+    - "§a每15.0秒产生一个铁矿"
+    - ""
+    - "§0§0§0§2§1§2§3"
 
 BlockCompress:
   Name: "§c压缩机§6§6§6" #必须包含 §6§6§6
@@ -64,3 +99,22 @@ BreakEnchant:
     - ""
     - "§0§0§0§4§1"
 
+FlyingGlass:
+  Name: "§c飞行之毯"
+  Material: "BOOK"
+  Lore:
+    - "§a右键召唤玻璃进行飞行"
+    - "§a随着你的上升而上升"
+    - "§a随着你的下降而下降"
+    - ""
+    - "§0§0§0§5"
+
+FloorStick:
+  Name: "§a建筑之杖"
+  Material: "STICK"
+  Lore:
+    - "§a右键消耗圆石搭建平台"
+    - "§a将在脚下搭建 3 * 3 的平台"
+    - "§a消耗背包圆石"
+    - ""
+    - "§0§0§0§6"
