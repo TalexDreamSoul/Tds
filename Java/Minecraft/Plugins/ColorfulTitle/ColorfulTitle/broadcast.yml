@@ -1,0 +1,64 @@
+#类型(即你要发送时输入这个)
+broadcast:
+    #Broadcast 或 Title / Player
+    type: Broadcast
+    #格式，为空则由你自定义
+    format: "&7[&c公告&7]"
+msg:
+    #Broadcast 或 Title / Player
+    type: Broadcast
+    #格式，为空则由你自定义
+    format: "&7[&f消息&7]"
+
+
+    
+#类型(即你要发送时输入这个)
+title:
+    #Broadcast 或 Title / Player
+    type: Title
+    #格式，为空则由你自定义
+    format:
+        #这里的msg和msg2的区别是会分割你发送的消息
+        #格式: /ct 类型名 title###subtitle
+        title: "&7&ki&f {msg} &7&ki"
+        subtitle: "&c&l{msg2}"
+        fade: "20,20,20"
+        
+#类型(即你要发送时输入这个)
+player:
+    #Broadcast 或 Title / Player
+    type: Player
+    #注意,为Play项的时候,命令格式为: /ct 类型名 玩家名###内容 
+    #如果你想要玩家执行命令,你可以在内容前面加一个 /
+
+#类型(即你要发送时输入这个)
+countdown:
+    type: CountDown
+    #执行时延迟时间 [时间为tick]
+    delay: 20
+    period: 20
+    #更高级拓展
+    super:
+        #类型 [这里填格式类型 比如倒计时想要以 title[指配置文件title而不是标题title] 的类型发送
+        class: title
+        #这里表示替换title msg的内容
+        msg1: "&7&ki&b 倒计时 &7&ki"
+        #这里指标题2
+        msg2: "&e- &c&l{count} &e-"
+
+#类型(即你要发送时输入这个)
+countdown+:
+    type: CountDown
+    #执行时延迟时间 [时间为tick]
+    delay: 20
+    period: 20
+    #更高级拓展
+    super:
+        #类型
+        class: cdmsg
+        #这里表示替换 msg 中的什么为倒计时
+        verplace: "{daojishi}"
+
+cdmsg:
+    type: Broadcast
+    format: "&a倒计时: {daojishi}"
