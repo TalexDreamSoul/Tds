@@ -1,0 +1,13 @@
+name: TalexLores
+version: ${project.version}
+main: talexlores.main.Main
+authors: [TalexDreamSoul]
+
+commands:
+  talexlores:
+    aliases: [tl]
+    default: op
+
+permissions:
+  talexlores.reload:
+    default: op

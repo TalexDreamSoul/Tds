@@ -1,0 +1,51 @@
+#右键后物品消失
+RightClickRemoveItem:
+  Orders:
+    Example:
+      Key: "§a右键后消失"
+      #匹配模式 可选: Completely 或 Contains
+      #Completely: 完全匹配lore Contains: 包含lore
+      Compare: Completely
+      #填写 none 取消消息提示
+      #可用变量: %name$ 物品名 %lore% 检测的key lore
+      # 在 Contains下有效: %thislore% 检测的key lore哪一行的lore
+      message: "§a你使用了 %name#"
+    Example2:
+      Key: "§a一次性"
+      #匹配模式 可选: Completely 或 Contains
+      #Completely: 完全匹配lore Contains: 包含lore
+      Compare: Cotains
+      #填写 none 取消消息提示
+      #可用变量: %name$ 物品名 %lore% 检测的key lore
+      # 在 Contains下有效: %thislore% 检测的key lore哪一行的lore
+      message: "§a你使用了 %thislore#"
+
+#右键后删除lore
+RightClickRemoveLore:
+  Orders:
+    Example:
+      Key: "§a使用后失效"
+      #匹配模式 可选: Completely 或 Contains
+      #Completely: 完全匹配lore Contains: 包含lore
+      Compare: Completely
+      #填写 none 取消消息提示
+      #可用变量: %name$ 物品名 %lore% 检测的key lore
+      # 在 Contains下有效: %thislore% 检测的key lore哪一行的lore
+      message: "§a你使用了 %name#"
+      #删除的lore
+      removeLores:
+        - "§a删除" #删除物品中lore完全匹配 §a删除 的
+        - "%thislore%" #完全删除此行lore (即被匹配到的哪一行lore将会被删除)
+    Example2:
+      Key: "§a使用后无效"
+      #匹配模式 可选: Completely 或 Contains
+      #Completely: 完全匹配lore Contains: 包含lore
+      Compare: Contains
+      #填写 none 取消消息提示
+      #可用变量: %name$ 物品名 %lore% 检测的key lore
+      # 在 Contains下有效: %thislore% 检测的key lore哪一行的lore
+      message: "§a你使用了 %name#"
+      #删除的lore
+      removeLores:
+        - "%all$" #删除物品中所有的lore
+
